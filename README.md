@@ -39,10 +39,12 @@ http://127.0.0.1:4000/
  title: Blogging Like a Hacker  
  \-\-\-  
  </code></pre>
-
+##如何添加文章的目录
+<http://maruku.rubyforge.org/maruku.md>
 ##markdown语言参考：
 [简书](http://www.jianshu.com/p/q81RER)  
-<http://wowubuntu.com/markdown/>  
+<http://wowubuntu.com/markdown/> 
+<http://markdown.xiaoshujiang.com/> 
 #其它问题解决：
 invalid byte sequence in UTF-8  
 
