@@ -53,6 +53,22 @@ http://127.0.0.1:4000/
 <http://wowubuntu.com/markdown/> 
 <http://markdown.xiaoshujiang.com/> 
 <http://www.appinn.com/markdown/>
+##如何在此基础上添加侧边栏
+参考地址:  
+<https://github.com/i5ting/i5ting_ztree_toc>  
+我尝试着使用文中的本页：  
+<https://github.com/i5ting/tocmd.gem>  
+在使用之前，要安装以下代码:
+<pre><code>
+sudo apt-get install node 
+</code></pre>
+使用ruby生成带侧边栏的命令：
+<pre><code>
+sudo tocmd_local -f README.md
+sudo tocmd_local -d README.md
+\#目录
+sudo tocmd -d _post
+</code></pre>
 #其它问题解决：
 invalid byte sequence in UTF-8  
 
