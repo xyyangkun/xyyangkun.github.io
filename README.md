@@ -64,10 +64,11 @@ sudo apt-get install node
 </code></pre>
 使用ruby生成带侧边栏的命令：
 <pre><code>
-sudo tocmd_local -f README.md
-sudo tocmd_local -d README.md
-\#目录
-sudo tocmd -d _post
+\#在xyyangkun.github.io目录下运行下面的命令，在此目录的preview下面生成带侧边栏的html文件
+sudo tocmd_local -d _posts/
+\# **第一次使用,_posts/目录下面要有preview目录**
+\#目前来说，使用sudo有权限问题，需要用sudo chown -hR改变属性。
+\#如不用-d,本次会在_posts下面生成preview并保存html文件
 </code></pre>
 #其它问题解决：
 invalid byte sequence in UTF-8  
