@@ -7,11 +7,16 @@ http://xyyangkun.github.io/
 
 ## 安装jekyll:
 <pre><code>
+sudo apt-get install ruby-dev nodejs retext  
+\#安装ruby和ejs软件
 gem sources --remove https://rubygems.org/    #防止出现连接错误的情况
 gem sources -a http://ruby.taobao.org/
-sudo apt-get install ruby-dev nodejs
+gem sources -l
+\*\*\* CURRENT SOURCES \*\*\*
+https://ruby.taobao.org
+\# 请确保只有 ruby.taobao.org
+sudo gem update
 sudo gem install rails execjs jekyll
-sudo apt-get install retext
 </code></pre>
 ## 本地环境启动:
 参考：<http://jekyll.bootcss.com/docs/usage/>
@@ -50,9 +55,9 @@ http://127.0.0.1:4000/
 <http://maruku.rubyforge.org/maruku.md>
 ##markdown语言参考：
 [简书](http://www.jianshu.com/p/q81RER)  
-<http://wowubuntu.com/markdown/> 
-<http://markdown.xiaoshujiang.com/> 
-<http://www.appinn.com/markdown/>
+<http://wowubuntu.com/markdown/>  
+<http://markdown.xiaoshujiang.com/>  
+<http://www.appinn.com/markdown/>  
 ##如何在此基础上添加侧边栏
 参考地址:  
 <https://github.com/i5ting/i5ting_ztree_toc>  
