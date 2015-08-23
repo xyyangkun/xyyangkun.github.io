@@ -11,7 +11,7 @@ gem sources --remove https://rubygems.org/    #防止出现连接错误的情况
 gem sources -a http://ruby.taobao.org/
 sudo apt-get install ruby-dev nodejs
 sudo gem install rails execjs jekyll
-sudo apt-get install retextc
+sudo apt-get install retext
 </code></pre>
 ## 本地环境启动:
 参考：<http://jekyll.bootcss.com/docs/usage/>
@@ -20,7 +20,7 @@ git checkout master
 jekyll serve</code></pre>
 ## 本地环境访问:
 http://127.0.0.1:4000/  
-写markdown语言时，可以用retextc预览  
+写markdown语言时，可以用retext预览  
 也可以用https://stackedit.io/editor#，一个在线markdown编辑器
 #写新文章
 参考：  
@@ -52,6 +52,7 @@ http://127.0.0.1:4000/
 [简书](http://www.jianshu.com/p/q81RER)  
 <http://wowubuntu.com/markdown/> 
 <http://markdown.xiaoshujiang.com/> 
+<http://www.appinn.com/markdown/>
 #其它问题解决：
 invalid byte sequence in UTF-8  
 
