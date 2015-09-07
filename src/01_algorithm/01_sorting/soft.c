@@ -5,6 +5,7 @@ static void print(int *p, int size);
 static void bubble_soft(int *array, int size);
 static void select_soft(int *array, int size);
 static void insert_soft(int *array, int size);
+static void quick_soft(int *array, int size);
 static void usage(char *name);
 #define SWAP(A, B) (A)=(A)^(B),(B)=(A)^(B),(A)=(A)^(B)
 //判断是不是阿拉伯数字
@@ -23,7 +24,7 @@ typedef struct myfun
 #define INIT_MY(FUNNAME) {FUNNAME##_soft, #FUNNAME}
 fun soft[]={bubble_soft, select_soft};
 
-mf alg[]={INIT_MY(bubble), INIT_MY(select), INIT_MY(insert)};
+mf alg[]={INIT_MY(bubble), INIT_MY(select), INIT_MY(insert), INIT_MY(quick)};
 
 int main(int argc, char *argv[])
 {
@@ -41,7 +42,7 @@ int main(int argc, char *argv[])
     {
         //printf("debug: %s  %d",argv[1], atoi(argv[1]));
         parm = atoi(argv[1]);
-        if(parm <=0 || parm >= (int)(sizeof(alg)/sizeof(mf))+1)
+        if(parm <0 || parm >= (int)(sizeof(alg)/sizeof(mf))+1)
         {
             usage(argv[0]);
             return -1;
@@ -202,4 +203,30 @@ static void insert_soft(int *array, int size)
         }
         //print(array, size);
     }
+}
+
+static void quick_soft(int *array, int size)
+{
+    int pivotindex=0;   //set first element as pivot
+    int storeindex = pivotindex + 1; 
+    int no;
+    for(no = storeindex; no < size; no++)
+    {
+        printf("no:%d  piv:%d\n", array[no], array[pivotindex]);
+        if (array[no] < array[pivotindex])
+        {
+            SWAP(array[no], array[pivotindex]);
+            storeindex++;
+        }
+    }
+    SWAP(array[pivotindex], array[storeindex - 1]);
+    pivotindex++;
+    printf("debug: pivotindex:%d   storeindex:%d\n", pivotindex, storeindex);
+    if(pivotindex >= storeindex)
+    {
+        return ;
+    }
+    quick_soft(&array[pivotindex], storeindex -1);
+    quick_soft(&array[storeindex + 1], size-(storeindex-pivotindex));
+
 }
