@@ -7,7 +7,9 @@ static void select_soft(int *array, int size);
 static void insert_soft(int *array, int size);
 static void quick_soft(int *array, int size);
 static void usage(char *name);
-#define SWAP(A, B) (A)=(A)^(B),(B)=(A)^(B),(A)=(A)^(B)
+//#define SWAP(A, B) (A)=(A)^(B),(B)=(A)^(B),(A)=(A)^(B)
+//#define SWAP(A, B) (A)=(A)+(B),(B)=(A)-(B),(A)=(A)-(B)
+#define SWAP(A, B) {int i; i=B; B=A; A=i;}
 //判断是不是阿拉伯数字
 #define ISA(chr) ((unsigned char)chr <='9' && (unsigned char)chr >= '0')
 //判断字符串是不是全是字
@@ -205,28 +207,34 @@ static void insert_soft(int *array, int size)
     }
 }
 
-static void quick_soft(int *array, int size)
+static int _partition(int *array, int p, int q)
 {
-    int pivotindex=0;   //set first element as pivot
-    int storeindex = pivotindex + 1; 
+    int storeindex = p ;
     int no;
-    for(no = storeindex; no < size; no++)
+    for(no = storeindex + 1; no < q; no++)
     {
-        printf("no:%d  piv:%d\n", array[no], array[pivotindex]);
-        if (array[no] < array[pivotindex])
+        if(array[no] <= array[p])
         {
-            SWAP(array[no], array[pivotindex]);
             storeindex++;
+            SWAP(array[no], array[storeindex]);
         }
     }
-    SWAP(array[pivotindex], array[storeindex - 1]);
-    pivotindex++;
-    printf("debug: pivotindex:%d   storeindex:%d\n", pivotindex, storeindex);
-    if(pivotindex >= storeindex)
+    printf("p=%d, storeindex=%d\n", p, storeindex);
+    SWAP(array[p], array[storeindex]);
+    return storeindex;
+}
+static void  _quick_soft(int *array, int p, int q)
+{
+    if(p < q)
     {
-        return ;
-    }
-    quick_soft(&array[pivotindex], storeindex -1);
-    quick_soft(&array[storeindex + 1], size-(storeindex-pivotindex));
+        print(array, q-p);
+        int r = _partition(array, p, q);
+        _quick_soft(array, p, r-1);
+        _quick_soft(array, r+1, q);
 
+    }
+}
+static void quick_soft(int *array, int size)
+{
+   _quick_soft(array, 0, size); 
 }
