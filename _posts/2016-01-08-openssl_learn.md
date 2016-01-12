@@ -116,4 +116,7 @@ OpenSSL 1.0.2d 9 Jul 2015
 
 ### ssh clinet 编程
 
+[SSH协议详解](http://wenku.baidu.com/link?url=ur04fSpAq6rpE4f_tQmGEDmIdwBrqX-dADru5Zc_tmZrihjFr43mY3YuMbf5bY3_5zzU4XqiSYSwJ469YShMFlzoDnUDdV8s8ClJJamdy7i)  
+[SSH2.0编程 ssh协议过程实现](http://www.tuicool.com/articles/VZJzuq)
+
 ### ssh server 编程
